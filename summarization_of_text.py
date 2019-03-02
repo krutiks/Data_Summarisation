@@ -55,21 +55,3 @@ def summurize(ranks,sentences,length):
 
 if __name__ == "__main__":
     print(main())
-
-
-'''text = open("pg1080.txt",encoding="utf-8")
-word_tokens = word_tokenize(text)
-stop = set(stopwords.words('english'))
-stop_m = [i for i in word_tokens if str(i).lower() not in stop]
-print(stop_m)
-lemmatizer = WordNetLemmatizer()
-filtered_sentence = [lemmatizer.lemmatize(w) for w in stop_m]
-bow_transformer = TfidfVectorizer(analyzer=filtered_sentence,ngram_range=(1,5)).fit(filtered_sentence)
-messages_bow = bow_transformer.transform(filtered_sentence)
-tfidf_transformer = TfidfTransformer().fit(messages_bow)
-messages_tfidf = tfidf_transformer.transform(messages_bow)
-text = open("pg1080.txt",encoding='utf-8')
-text = text.read()
-#print(text)
-summary = summarize(str(text), ratio=0.01)
-print(summary)'''
