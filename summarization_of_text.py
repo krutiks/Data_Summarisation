@@ -2,7 +2,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.probability import FreqDist
 from collections import defaultdict
-import argparse
 from heapq import nlargest
 
 def __init__(self,filename):
@@ -13,15 +12,6 @@ def main():
     filtered_words, tokenised_sentence = tokenize(read)
     rank = scoring(filtered_words,tokenised_sentence)
     return summurize(rank,tokenised_sentence,len(tokenised_sentence))
-
-def parse_arguments():
-    """ Parse command line arguments """
-    parser = argparse.ArgumentParser()
-    parser.add_argument('filepath', help='File name of text to summarize')
-    parser.add_argument('-l', '--length', default=4, help='Number of sentences to return')
-    args = parser.parse_args()
-
-    return args
 
 def read_file():
     text = open("somenotes.txt",encoding="utf-8")
